@@ -1,0 +1,29 @@
+name: Release
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      
+      - name: install rust toochain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasi
+      
+      - name: build release binary
+        run: cargo build --release
+      
+      - name: create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/wasm32-wasi/release/compact-bar-x.wasm
