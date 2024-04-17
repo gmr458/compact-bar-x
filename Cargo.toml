@@ -1,6 +1,6 @@
 [package]
 name = "compact-bar-x"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["German David <germanmarinrolong@gmail.com>"]
 edition = "2021"
 
@@ -8,5 +8,5 @@ edition = "2021"
 ansi_term = "0.12.1"
 colored = "2.1.0"
 unicode-width = "0.1.11"
-zellij-tile = "0.40.0"
-zellij-tile-utils = "0.40.0"
+zellij-tile = "0.39.2"
+zellij-tile-utils = "0.39.2"
